@@ -394,8 +394,10 @@ const filterOptions = [
   .toggle-all-button,
   .clear-completed,
   .clear-all {
-    padding: 12px 24px;
+    padding: 12px 28px;
     font-size: 0.9rem;
+    min-width: 90px;
+    white-space: nowrap;
   }
 }
 

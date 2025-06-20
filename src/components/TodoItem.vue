@@ -360,7 +360,12 @@ const cancelEditing = () => {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 450px;
+    max-width: 400px;
+  }
+  
+  .priority-badge {
+    margin-left: auto;
+    font-size: 1rem;
   }
   
   .todo-text::after {
