@@ -149,6 +149,7 @@ const cancelEditing = () => {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 0.95rem;
   position: relative;
+  min-width: 0;
 }
 
 .destroy {
@@ -307,7 +308,7 @@ const cancelEditing = () => {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 400px;
+    max-width: 450px;
   }
   
   .todo-text::after {
@@ -315,7 +316,6 @@ const cancelEditing = () => {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
     background: #1f2937;
     color: white;
     padding: 8px 12px;
@@ -330,8 +330,8 @@ const cancelEditing = () => {
     transition: all 0.2s ease;
     pointer-events: none;
     transform: translateY(-4px);
-    min-width: 200px;
-    max-width: 400px;
+    width: 300px;
+    max-width: calc(100vw - 32px);
   }
   
   .todo-text:hover::after {
