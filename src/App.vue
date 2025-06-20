@@ -23,6 +23,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 #app {
@@ -31,6 +34,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {

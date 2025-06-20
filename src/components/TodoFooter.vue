@@ -125,11 +125,15 @@ const filterOptions = [
 }
 
 .footer-content {
-  padding: 12px 12px 14px 12px;
+  padding: 10px 8px 12px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .filters {
@@ -168,25 +172,30 @@ const filterOptions = [
 
 .actions {
   display: flex;
-  gap: 3px;
+  gap: 2px;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 50%;
+  overflow: hidden;
 }
 
 .toggle-all-button,
 .clear-completed,
 .clear-all {
-  padding: 6px 10px;
+  padding: 4px 6px;
   border: none;
   border-radius: 4px;
   background: #f8fafc;
   color: #64748b;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70px;
 }
 
 
@@ -230,36 +239,39 @@ const filterOptions = [
   color: white;
 }
 
-/* iPhone Mini and small devices */
-@media (max-width: 374px) {
+/* iPhone 12 Mini and small devices */
+@media (max-width: 390px) {
   .footer-header {
-    padding: 8px 8px 6px 8px;
+    padding: 6px 6px 4px 6px;
   }
   
   .todo-count {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
   
   .footer-content {
-    padding: 8px 8px 10px 8px;
-    gap: 6px;
+    padding: 6px 4px 8px 4px;
+    gap: 4px;
     flex-direction: column;
   }
   
   .filters {
     gap: 1px;
-    padding: 2px;
+    padding: 1px;
     order: 2;
+    width: 100%;
+    justify-content: center;
   }
   
   .filter-button {
-    padding: 3px 5px;
-    font-size: 0.55rem;
-    min-width: 30px;
+    padding: 2px 4px;
+    font-size: 0.5rem;
+    min-width: 26px;
+    max-width: 40px;
   }
   
   .actions {
-    gap: 2px;
+    gap: 1px;
     flex-direction: row;
     order: 1;
     width: 100%;
@@ -269,10 +281,11 @@ const filterOptions = [
   .toggle-all-button,
   .clear-completed,
   .clear-all {
-    padding: 4px 8px;
-    font-size: 0.65rem;
+    padding: 3px 5px;
+    font-size: 0.6rem;
     flex: 1;
-    max-width: 80px;
+    max-width: 65px;
+    min-width: 45px;
   }
 }
 

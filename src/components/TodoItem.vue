@@ -101,8 +101,12 @@ const cancelEditing = () => {
   display: flex;
   align-items: center;
   padding: 16px 12px;
-  gap: 10px;
+  gap: 8px;
   min-height: 60px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .toggle {
@@ -259,12 +263,12 @@ const cancelEditing = () => {
   border-left: 4px solid #16a34a;
 }
 
-/* iPhone Mini and small devices */
-@media (max-width: 374px) {
+/* iPhone 12 Mini and small devices */
+@media (max-width: 390px) {
   .view {
-    padding: 12px 8px;
-    gap: 8px;
-    min-height: 52px;
+    padding: 10px 6px;
+    gap: 6px;
+    min-height: 48px;
   }
   
   .toggle {
@@ -277,28 +281,32 @@ const cancelEditing = () => {
   }
   
   .todo-text {
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100vw - 120px);
   }
   
   .priority-badge {
-    font-size: 0.8rem;
-    margin-left: 4px;
+    font-size: 0.75rem;
+    margin-left: 3px;
   }
   
   .destroy {
-    width: 20px;
-    height: 20px;
-    font-size: 0.8rem;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
   }
   
   .edit {
-    font-size: 0.85rem;
-    padding: 10px 8px;
+    font-size: 0.8rem;
+    padding: 8px 6px;
   }
   
   .edit-form {
-    padding: 12px 8px;
+    padding: 10px 6px;
   }
 }
 

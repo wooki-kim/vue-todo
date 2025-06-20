@@ -63,6 +63,8 @@ const handleSubmit = () => {
   overflow: hidden;
   border: 2px solid #f1f5f9;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   contain: layout style;
 }
 
@@ -71,6 +73,9 @@ const handleSubmit = () => {
   align-items: center;
   position: relative;
   min-height: 54px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .todo-input-form:focus-within {
@@ -114,7 +119,7 @@ const handleSubmit = () => {
 
 .priority-select {
   font-size: 0.8rem;
-  padding: 6px 10px;
+  padding: 6px 8px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   background: #f9fafb;
@@ -123,9 +128,11 @@ const handleSubmit = () => {
   outline: none;
   cursor: pointer;
   flex-shrink: 0;
-  min-width: 70px;
+  min-width: 65px;
+  max-width: 80px;
   height: 32px;
   font-weight: 500;
+  box-sizing: border-box;
 }
 
 .priority-select[data-priority="high"] {
@@ -171,34 +178,40 @@ const handleSubmit = () => {
   pointer-events: none;
 }
 
-/* iPhone Mini and small devices */
-@media (max-width: 374px) {
+/* iPhone 12 Mini and small devices */
+@media (max-width: 390px) {
   .todo-input-form {
     border-radius: 8px;
     margin-bottom: 1rem;
+    width: calc(100% - 8px);
+    max-width: calc(100vw - 40px);
   }
   
   .input-row {
-    min-height: 48px;
+    min-height: 44px;
+    padding: 0 2px;
   }
   
   .todo-input {
-    font-size: 0.9rem;
-    padding: 12px 12px 12px 40px;
-    height: 48px;
+    font-size: 0.85rem;
+    padding: 10px 8px 10px 32px;
+    height: 44px;
+    min-width: 0;
+    width: 100%;
   }
   
   .todo-input-form::before {
-    left: 12px;
-    font-size: 0.9rem;
+    left: 8px;
+    font-size: 0.8rem;
   }
   
   .priority-select {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    min-width: 60px;
-    height: 28px;
-    margin-right: 6px;
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    min-width: 50px;
+    max-width: 60px;
+    height: 26px;
+    margin-right: 4px;
   }
 }
 

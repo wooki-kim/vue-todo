@@ -53,8 +53,11 @@ const {
 <style scoped>
 .todo-app {
   max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   font-family: inherit;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .header {
@@ -89,19 +92,22 @@ const {
   overflow: hidden;
 }
 
-/* iPhone Mini and small devices */
-@media (max-width: 374px) {
+/* iPhone 12 Mini and small devices */
+@media (max-width: 390px) {
   .todo-app {
-    max-width: 100%;
+    max-width: calc(100vw - 16px);
+    width: calc(100vw - 16px);
     margin: 0;
+    padding: 0;
   }
   
   .header {
     margin-bottom: 1rem;
+    padding: 0 4px;
   }
   
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
   
