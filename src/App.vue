@@ -32,17 +32,19 @@ body {
   min-height: 100vh;
   padding: 16px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
   overflow-x: hidden;
+  padding-top: 40px;
 }
 
 @media (max-width: 390px) {
   #app {
     padding: 8px;
+    padding-top: 20px;
   }
 }
 
