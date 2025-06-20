@@ -27,8 +27,7 @@
           class="toggle-all-button"
           :class="{ active: stats.completed === stats.total && stats.total > 0 }"
         >
-          <span class="action-icon">{{ stats.completed === stats.total && stats.total > 0 ? '↩️' : '✅' }}</span>
-          <span class="action-text">{{ stats.completed === stats.total && stats.total > 0 ? '해제' : '완료' }}</span>
+          {{ stats.completed === stats.total && stats.total > 0 ? '해제' : '완료' }}
         </button>
         
         <button
@@ -36,8 +35,7 @@
           @click="$emit('clearCompleted')"
           class="clear-completed"
         >
-          <span class="action-icon">🗑️</span>
-          <span class="action-text">완료삭제</span>
+          완료삭제
         </button>
         
         <button
@@ -45,8 +43,7 @@
           @click="showClearAllModal = true"
           class="clear-all"
         >
-          <span class="action-icon">⚠️</span>
-          <span class="action-text">전체삭제</span>
+          전체삭제
         </button>
       </div>
     </div>
@@ -178,75 +175,57 @@ const filterOptions = [
 .toggle-all-button,
 .clear-completed,
 .clear-all {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 6px;
-  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border: none;
   border-radius: 6px;
-  background: white;
-  color: #374151;
+  background: #f8fafc;
+  color: #64748b;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-width: 44px;
-  min-height: 44px;
-  gap: 2px;
-}
-
-.action-icon {
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.action-text {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
-  line-height: 1;
+  white-space: nowrap;
 }
 
-.toggle-all-button:hover,
+
+.toggle-all-button:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+
 .clear-completed:hover,
 .clear-all:hover {
-  background: #f9fafb;
-  border-color: #9ca3af;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  background: #e2e8f0;
+  color: #475569;
 }
 
 .toggle-all-button.active {
-  background: #10b981;
+  background: #3b82f6;
   color: white;
-  border-color: #10b981;
 }
 
 .toggle-all-button.active:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #2563eb;
 }
 
 .clear-completed {
-  background: #fef2f2;
-  border-color: #fecaca;
+  background: #fee2e2;
   color: #dc2626;
 }
 
 .clear-completed:hover {
   background: #dc2626;
-  border-color: #dc2626;
   color: white;
 }
 
 .clear-all {
-  background: #fef3cd;
-  border-color: #fde68a;
+  background: #fef3c7;
   color: #d97706;
 }
 
 .clear-all:hover {
   background: #d97706;
-  border-color: #d97706;
   color: white;
 }
 
@@ -284,18 +263,8 @@ const filterOptions = [
   .toggle-all-button,
   .clear-completed,
   .clear-all {
-    flex-direction: row;
-    padding: 7px 11px;
-    min-height: auto;
-    gap: 4px;
-  }
-  
-  .action-icon {
-    font-size: 0.8rem;
-  }
-  
-  .action-text {
-    font-size: 0.75rem;
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
 }
 
@@ -332,16 +301,8 @@ const filterOptions = [
   .toggle-all-button,
   .clear-completed,
   .clear-all {
-    padding: 10px 16px;
-    white-space: nowrap;
-  }
-  
-  .action-icon {
-    font-size: 1rem;
-  }
-  
-  .action-text {
-    font-size: 0.85rem;
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 }
 
