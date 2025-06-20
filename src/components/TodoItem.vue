@@ -8,7 +8,7 @@
         :checked="todo.completed"
         @change="$emit('toggleTodo', todo.id)"
       />
-      <label @dblclick="startEditing" class="todo-text">{{ todo.text }}</label>
+      <label @dblclick="startEditing" class="todo-text" :data-full-text="todo.text">{{ todo.text }}</label>
       <span class="priority-badge" :class="`priority-${todo.priority}`">
         {{ todo.priority === 'high' ? '●' : todo.priority === 'medium' ? '●' : '●' }}
       </span>
@@ -148,6 +148,7 @@ const cancelEditing = () => {
   font-weight: 400;
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 0.95rem;
+  position: relative;
 }
 
 .destroy {
@@ -303,6 +304,40 @@ const cancelEditing = () => {
   
   .todo-text {
     font-size: 1.125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+  }
+  
+  .todo-text::after {
+    content: attr(data-full-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1f2937;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    transform: translateY(-4px);
+    min-width: 200px;
+    max-width: 400px;
+  }
+  
+  .todo-text:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   
   .destroy {
