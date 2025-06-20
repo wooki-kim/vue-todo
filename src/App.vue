@@ -28,6 +28,9 @@ body {
 #app {
   min-height: 100vh;
   padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
