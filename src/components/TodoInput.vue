@@ -9,9 +9,9 @@
         autofocus
       />
       <select v-model="priority" class="priority-select">
-        <option value="high">🔴 높음</option>
-        <option value="medium">🟡 중간</option>
-        <option value="low">🟢 낮음</option>
+        <option value="high">⚫ 높음</option>
+        <option value="medium">⚪ 중간</option>
+        <option value="low">⚫ 낮음</option>
       </select>
     </div>
   </form>

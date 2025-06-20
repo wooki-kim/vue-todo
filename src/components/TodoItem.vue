@@ -10,7 +10,7 @@
       />
       <label @dblclick="startEditing" class="todo-text">{{ todo.text }}</label>
       <span class="priority-badge" :class="`priority-${todo.priority}`">
-        {{ todo.priority === 'high' ? '🔴' : todo.priority === 'medium' ? '🟡' : '🟢' }}
+        {{ todo.priority === 'high' ? '●' : todo.priority === 'medium' ? '○' : '●' }}
       </span>
       <button class="destroy" @click="$emit('removeTodo', todo.id)">×</button>
     </div>
@@ -229,6 +229,19 @@ const cancelEditing = () => {
 .priority-badge {
   font-size: 1rem;
   margin-left: 8px;
+  font-weight: 500;
+}
+
+.priority-badge.priority-high {
+  color: #ef4444;
+}
+
+.priority-badge.priority-medium {
+  color: #6b7280;
+}
+
+.priority-badge.priority-low {
+  color: #10b981;
 }
 
 .todo-item.priority-high {
