@@ -180,7 +180,7 @@ const filterOptions = [
 }
 
 .toggle-all-button {
-  padding: 4px 6px;
+  padding: 4px 8px;
   border: 1px solid #10b981;
   border-radius: 4px;
   background: #ecfdf5;
@@ -191,14 +191,12 @@ const filterOptions = [
   font-weight: 600;
   font-family: 'Noto Sans KR', sans-serif;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 70px;
+  min-width: fit-content;
 }
 
 .clear-completed,
 .clear-all {
-  padding: 4px 6px;
+  padding: 4px 8px;
   border: none;
   border-radius: 4px;
   background: #f8fafc;
@@ -209,9 +207,7 @@ const filterOptions = [
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 70px;
+  min-width: fit-content;
 }
 
 
