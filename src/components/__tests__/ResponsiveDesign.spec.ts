@@ -113,9 +113,11 @@ describe('반응형 디자인 단위 테스트', () => {
       // 할 일 추가
       const input = wrapper.find('.todo-input')
       await input.setValue('테스트 할 일')
-      await input.trigger('keyup.enter')
+      const form = wrapper.find('.todo-input-form')
+      await form.trigger('submit')
       
       // 할 일이 추가되었는지 확인
+      await wrapper.vm.$nextTick()
       expect(wrapper.text()).toContain('테스트 할 일')
     }
   })
@@ -130,12 +132,14 @@ describe('반응형 디자인 단위 테스트', () => {
     const prioritySelect = wrapper.find('.priority-select')
     await prioritySelect.setValue('high')
     
-    // 입력창에 텍스트 입력 후 엔터
+    // 입력창에 텍스트 입력 후 폼 제출
     const input = wrapper.find('.todo-input')
     await input.setValue('높은 우선순위 할 일')
-    await input.trigger('keyup.enter')
+    const form = wrapper.find('.todo-input-form')
+    await form.trigger('submit')
     
     // 할 일이 추가되고 우선순위가 적용되었는지 확인
+    await wrapper.vm.$nextTick()
     expect(wrapper.text()).toContain('높은 우선순위 할 일')
     expect(wrapper.find('.priority-high').exists()).toBe(true)
   })
@@ -149,15 +153,18 @@ describe('반응형 디자인 단위 테스트', () => {
     // 할 일 추가
     const input = wrapper.find('.todo-input')
     await input.setValue('테스트 할 일')
-    await input.trigger('keyup.enter')
+    const form = wrapper.find('.todo-input-form')
+    await form.trigger('submit')
+    await wrapper.vm.$nextTick()
     
     // 할 일 완료 처리
     const toggle = wrapper.find('.toggle')
-    await toggle.setChecked(true)
+    await toggle.setValue(true)
     
-    // 완료된 항목 필터 클릭
-    const completedFilter = wrapper.find('[data-filter="completed"]')
-    if (completedFilter.exists()) {
+    // 완료된 항목 필터 클릭 (필터 버튼 찾기)
+    const filterButtons = wrapper.findAll('.filter-button')
+    const completedFilter = filterButtons.find(button => button.text().includes('완료'))
+    if (completedFilter) {
       await completedFilter.trigger('click')
     }
     
@@ -175,7 +182,9 @@ describe('반응형 디자인 단위 테스트', () => {
     const longText = '이것은 매우 긴 할 일 제목입니다. 작은 화면에서는 이 텍스트가 적절히 처리되어야 합니다.'
     const input = wrapper.find('.todo-input')
     await input.setValue(longText)
-    await input.trigger('keyup.enter')
+    const form = wrapper.find('.todo-input-form')
+    await form.trigger('submit')
+    await wrapper.vm.$nextTick()
     
     // 텍스트가 추가되었는지 확인
     expect(wrapper.text()).toContain(longText)
@@ -192,16 +201,19 @@ describe('반응형 디자인 단위 테스트', () => {
     
     // 할 일을 몇 개 추가해서 푸터가 보이도록 함
     const input = wrapper.find('.todo-input')
+    const form = wrapper.find('.todo-input-form')
     
     await input.setValue('첫 번째 할 일')
-    await input.trigger('keyup.enter')
+    await form.trigger('submit')
+    await wrapper.vm.$nextTick()
     
     await input.setValue('두 번째 할 일')
-    await input.trigger('keyup.enter')
+    await form.trigger('submit')
+    await wrapper.vm.$nextTick()
     
     // 첫 번째 할 일 완료
     const toggle = wrapper.find('.toggle')
-    await toggle.setChecked(true)
+    await toggle.setValue(true)
     
     // 푸터가 표시되는지 확인
     expect(wrapper.find('.footer').exists()).toBe(true)
