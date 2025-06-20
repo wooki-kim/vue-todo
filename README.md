@@ -86,14 +86,3 @@ src/
 ### 반응형 디자인
 모바일과 데스크톱 환경 모두에서 최적화된 사용자 경험을 제공합니다.
 
-## 면접 참고 사항
-
-이 프로젝트는 Vue 3의 최신 기능들을 잘 보여주는 예제입니다:
-
-1. **Composition API**: 로직 재사용과 타입 안전성
-2. **Reactive System**: Vue의 반응형 시스템 활용
-3. **Component Communication**: Props와 Events를 통한 컴포넌트 간 통신
-4. **State Management**: Composable을 통한 상태 관리
-5. **Testing**: Vitest와 Vue Test Utils를 활용한 테스트 전략
-
-React 경험이 있다면 Vue의 Composition API가 React Hooks와 매우 유사하다는 점을 발견할 수 있을 것입니다.
