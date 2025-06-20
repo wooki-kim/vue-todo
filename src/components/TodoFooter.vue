@@ -125,11 +125,11 @@ const filterOptions = [
 }
 
 .footer-content {
-  padding: 14px 16px 16px 16px;
+  padding: 12px 12px 14px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
 
 .filters {
@@ -142,17 +142,17 @@ const filterOptions = [
 }
 
 .filter-button {
-  padding: 4px 8px;
+  padding: 4px 6px;
   border: none;
   border-radius: 4px;
   background: transparent;
   color: #64748b;
   cursor: pointer;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
   transition: all 0.2s ease;
-  min-width: 44px;
+  min-width: 36px;
 }
 
 .filter-button:hover {
@@ -168,21 +168,22 @@ const filterOptions = [
 
 .actions {
   display: flex;
-  gap: 4px;
+  gap: 3px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .toggle-all-button,
 .clear-completed,
 .clear-all {
-  padding: 8px 16px;
+  padding: 6px 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   background: #f8fafc;
   color: #64748b;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
   white-space: nowrap;
@@ -227,6 +228,52 @@ const filterOptions = [
 .clear-all:hover {
   background: #d97706;
   color: white;
+}
+
+/* iPhone Mini and small devices */
+@media (max-width: 374px) {
+  .footer-header {
+    padding: 8px 8px 6px 8px;
+  }
+  
+  .todo-count {
+    font-size: 0.7rem;
+  }
+  
+  .footer-content {
+    padding: 8px 8px 10px 8px;
+    gap: 6px;
+    flex-direction: column;
+  }
+  
+  .filters {
+    gap: 1px;
+    padding: 2px;
+    order: 2;
+  }
+  
+  .filter-button {
+    padding: 3px 5px;
+    font-size: 0.55rem;
+    min-width: 30px;
+  }
+  
+  .actions {
+    gap: 2px;
+    flex-direction: row;
+    order: 1;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .toggle-all-button,
+  .clear-completed,
+  .clear-all {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    flex: 1;
+    max-width: 80px;
+  }
 }
 
 /* Tablet */

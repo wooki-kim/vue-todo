@@ -113,18 +113,18 @@ const handleSubmit = () => {
 }
 
 .priority-select {
-  font-size: 0.875rem;
-  padding: 8px 12px;
+  font-size: 0.8rem;
+  padding: 6px 10px;
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #f9fafb;
   color: #374151;
-  margin-right: 12px;
+  margin-right: 8px;
   outline: none;
   cursor: pointer;
   flex-shrink: 0;
-  min-width: 80px;
-  height: 36px;
+  min-width: 70px;
+  height: 32px;
   font-weight: 500;
 }
 
@@ -169,6 +169,37 @@ const handleSubmit = () => {
   font-size: 1rem;
   z-index: 1;
   pointer-events: none;
+}
+
+/* iPhone Mini and small devices */
+@media (max-width: 374px) {
+  .todo-input-form {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .input-row {
+    min-height: 48px;
+  }
+  
+  .todo-input {
+    font-size: 0.9rem;
+    padding: 12px 12px 12px 40px;
+    height: 48px;
+  }
+  
+  .todo-input-form::before {
+    left: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .priority-select {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    min-width: 60px;
+    height: 28px;
+    margin-right: 6px;
+  }
 }
 
 /* Tablet */

@@ -89,6 +89,32 @@ const {
   overflow: hidden;
 }
 
+/* iPhone Mini and small devices */
+@media (max-width: 374px) {
+  .todo-app {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .header {
+    margin-bottom: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .main {
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .footer {
+    border-radius: 8px;
+  }
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .todo-app {

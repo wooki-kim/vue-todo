@@ -100,14 +100,14 @@ const cancelEditing = () => {
 .view {
   display: flex;
   align-items: center;
-  padding: 18px 16px;
-  gap: 14px;
-  min-height: 64px;
+  padding: 16px 12px;
+  gap: 10px;
+  min-height: 60px;
 }
 
 .toggle {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   appearance: none;
   border: 2px solid #d1d5db;
@@ -154,13 +154,13 @@ const cancelEditing = () => {
 
 .destroy {
   opacity: 0;
-  width: 28px;
-  height: 28px;
-  font-size: 1rem;
+  width: 24px;
+  height: 24px;
+  font-size: 0.9rem;
   color: #ef4444;
   background: #fef2f2;
   border: 1px solid #fecaca;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
@@ -229,9 +229,10 @@ const cancelEditing = () => {
 }
 
 .priority-badge {
-  font-size: 1rem;
-  margin-left: 8px;
+  font-size: 0.9rem;
+  margin-left: 6px;
   font-weight: 500;
+  flex-shrink: 0;
 }
 
 .priority-badge.priority-high {
@@ -256,6 +257,49 @@ const cancelEditing = () => {
 
 .todo-item.priority-low {
   border-left: 4px solid #16a34a;
+}
+
+/* iPhone Mini and small devices */
+@media (max-width: 374px) {
+  .view {
+    padding: 12px 8px;
+    gap: 8px;
+    min-height: 52px;
+  }
+  
+  .toggle {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .toggle:checked::after {
+    font-size: 0.6rem;
+  }
+  
+  .todo-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .priority-badge {
+    font-size: 0.8rem;
+    margin-left: 4px;
+  }
+  
+  .destroy {
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+  }
+  
+  .edit {
+    font-size: 0.85rem;
+    padding: 10px 8px;
+  }
+  
+  .edit-form {
+    padding: 12px 8px;
+  }
 }
 
 /* Tablet */
@@ -330,8 +374,8 @@ const cancelEditing = () => {
     transition: all 0.2s ease;
     pointer-events: none;
     transform: translateY(-4px);
-    width: 300px;
-    max-width: calc(100vw - 32px);
+    width: 280px;
+    max-width: calc(100vw - 40px);
   }
   
   .todo-text:hover::after {
