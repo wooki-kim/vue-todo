@@ -181,37 +181,38 @@ const handleSubmit = () => {
 /* iPhone 12 Mini and small devices */
 @media (max-width: 390px) {
   .todo-input-form {
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 1rem;
-    width: calc(100% - 8px);
-    max-width: calc(100vw - 40px);
+    width: 100%;
+    max-width: 100%;
+    border-width: 2px;
   }
   
   .input-row {
-    min-height: 44px;
-    padding: 0 2px;
+    min-height: 48px;
+    padding: 0;
   }
   
   .todo-input {
-    font-size: 0.85rem;
-    padding: 10px 8px 10px 32px;
-    height: 44px;
+    font-size: 0.9rem;
+    padding: 14px 16px 14px 40px;
+    height: 48px;
     min-width: 0;
     width: 100%;
   }
   
   .todo-input-form::before {
-    left: 8px;
-    font-size: 0.8rem;
+    left: 16px;
+    font-size: 0.9rem;
   }
   
   .priority-select {
-    font-size: 0.7rem;
-    padding: 2px 4px;
-    min-width: 50px;
-    max-width: 60px;
-    height: 26px;
-    margin-right: 4px;
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    min-width: 60px;
+    max-width: 75px;
+    height: 32px;
+    margin-right: 12px;
   }
 }
 

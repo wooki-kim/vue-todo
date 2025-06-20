@@ -138,25 +138,25 @@ const filterOptions = [
 
 .filters {
   display: flex;
-  gap: 1px;
-  background: #f8fafc;
-  padding: 2px;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
+  gap: 4px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
 }
 
 .filter-button {
-  padding: 4px 6px;
-  border: none;
-  border-radius: 4px;
-  background: transparent;
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
   color: #64748b;
   cursor: pointer;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 500;
   font-family: 'Noto Sans KR', sans-serif;
   transition: all 0.2s ease;
-  min-width: 36px;
+  min-width: 50px;
 }
 
 .filter-button:hover {
@@ -167,7 +167,7 @@ const filterOptions = [
 .filter-button.selected {
   background: #3b82f6;
   color: white;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px 0 rgba(59, 130, 246, 0.3);
 }
 
 .actions {
@@ -179,7 +179,23 @@ const filterOptions = [
   overflow: hidden;
 }
 
-.toggle-all-button,
+.toggle-all-button {
+  padding: 4px 6px;
+  border: 1px solid #10b981;
+  border-radius: 4px;
+  background: #ecfdf5;
+  color: #059669;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70px;
+}
+
 .clear-completed,
 .clear-all {
   padding: 4px 6px;
@@ -211,12 +227,18 @@ const filterOptions = [
 }
 
 .toggle-all-button.active {
-  background: #3b82f6;
+  background: #10b981;
   color: white;
+  border-color: #10b981;
 }
 
 .toggle-all-button.active:hover {
-  background: #2563eb;
+  background: #059669;
+  border-color: #059669;
+}
+
+.toggle-all-button:hover {
+  background: #d1fae5;
 }
 
 .clear-completed {
@@ -242,50 +264,61 @@ const filterOptions = [
 /* iPhone 12 Mini and small devices */
 @media (max-width: 390px) {
   .footer-header {
-    padding: 6px 6px 4px 6px;
+    padding: 12px 16px 8px 16px;
   }
   
   .todo-count {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
   }
   
   .footer-content {
-    padding: 6px 4px 8px 4px;
-    gap: 4px;
+    padding: 14px 16px 18px 16px;
+    gap: 14px;
     flex-direction: column;
   }
   
   .filters {
-    gap: 1px;
-    padding: 1px;
+    gap: 6px;
+    padding: 0;
     order: 2;
     width: 100%;
     justify-content: center;
   }
   
   .filter-button {
-    padding: 2px 4px;
-    font-size: 0.5rem;
-    min-width: 26px;
-    max-width: 40px;
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    min-width: 70px;
+    border-radius: 8px;
+    flex: 1;
+    max-width: 110px;
   }
   
   .actions {
-    gap: 1px;
+    gap: 8px;
     flex-direction: row;
     order: 1;
     width: 100%;
     justify-content: space-around;
   }
   
-  .toggle-all-button,
+  .toggle-all-button {
+    padding: 10px 14px;
+    font-size: 0.75rem;
+    flex: 1;
+    max-width: 95px;
+    min-width: 65px;
+    border-radius: 8px;
+  }
+  
   .clear-completed,
   .clear-all {
-    padding: 3px 5px;
-    font-size: 0.6rem;
+    padding: 10px 14px;
+    font-size: 0.75rem;
     flex: 1;
-    max-width: 65px;
-    min-width: 45px;
+    max-width: 95px;
+    min-width: 65px;
+    border-radius: 8px;
   }
 }
 

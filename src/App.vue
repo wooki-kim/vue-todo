@@ -40,6 +40,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 390px) {
+  #app {
+    padding: 8px;
+  }
+}
+
 @media (min-width: 768px) {
   #app {
     padding: 24px;

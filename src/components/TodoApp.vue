@@ -103,7 +103,7 @@ const {
   
   .header {
     margin-bottom: 1rem;
-    padding: 0 4px;
+    padding: 0;
   }
   
   .header h1 {
@@ -111,13 +111,10 @@ const {
     margin-bottom: 1rem;
   }
   
-  .main {
-    border-radius: 8px;
-    margin-bottom: 8px;
-  }
-  
+  .main,
   .footer {
-    border-radius: 8px;
+    border-radius: 12px;
+    margin-bottom: 8px;
   }
 }
 

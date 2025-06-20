@@ -266,47 +266,47 @@ const cancelEditing = () => {
 /* iPhone 12 Mini and small devices */
 @media (max-width: 390px) {
   .view {
-    padding: 10px 6px;
-    gap: 6px;
-    min-height: 48px;
+    padding: 14px 16px;
+    gap: 8px;
+    min-height: 52px;
   }
   
   .toggle {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
   
   .toggle:checked::after {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
   
   .todo-text {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: calc(100vw - 120px);
+    max-width: calc(100vw - 140px);
   }
   
   .priority-badge {
-    font-size: 0.75rem;
-    margin-left: 3px;
+    font-size: 0.8rem;
+    margin-left: 4px;
   }
   
   .destroy {
-    width: 18px;
-    height: 18px;
-    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
   }
   
   .edit {
-    font-size: 0.8rem;
-    padding: 8px 6px;
+    font-size: 0.85rem;
+    padding: 12px 16px;
   }
   
   .edit-form {
-    padding: 10px 6px;
+    padding: 14px 16px;
   }
 }
 
