@@ -23,6 +23,7 @@
         :current-filter="filter"
         @set-filter="filter = $event"
         @clear-completed="clearCompleted"
+        @clear-all="clearAll"
         @toggle-all="toggleAllTodos"
       />
     </footer>
@@ -43,6 +44,7 @@ const {
   toggleTodo, 
   updateTodo, 
   clearCompleted, 
+  clearAll,
   toggleAllTodos, 
   todoStats 
 } = useTodos()

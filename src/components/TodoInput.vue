@@ -8,10 +8,10 @@
         placeholder="할 일을 입력하세요..."
         autofocus
       />
-      <select v-model="priority" class="priority-select">
-        <option value="high">⚫ 높음</option>
-        <option value="medium">⚪ 중간</option>
-        <option value="low">⚫ 낮음</option>
+      <select v-model="priority" class="priority-select" :data-priority="priority">
+        <option value="high">● 높음</option>
+        <option value="medium">● 중간</option>
+        <option value="low">● 낮음</option>
       </select>
     </div>
   </form>
@@ -125,6 +125,34 @@ const handleSubmit = () => {
   flex-shrink: 0;
   min-width: 80px;
   height: 36px;
+  font-weight: 500;
+}
+
+.priority-select[data-priority="high"] {
+  color: #dc2626;
+}
+
+.priority-select[data-priority="medium"] {
+  color: #ea580c;
+}
+
+.priority-select[data-priority="low"] {
+  color: #16a34a;
+}
+
+.priority-select option[value="high"] {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.priority-select option[value="medium"] {
+  color: #ea580c;
+  font-weight: 600;
+}
+
+.priority-select option[value="low"] {
+  color: #16a34a;
+  font-weight: 600;
 }
 
 .todo-input::placeholder {

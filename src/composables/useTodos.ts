@@ -77,6 +77,10 @@ export function useTodos() {
     allTodos.value = allTodos.value.filter(todo => !todo.completed)
   }
 
+  const clearAll = () => {
+    allTodos.value = []
+  }
+
   const toggleAllTodos = () => {
     const allCompleted = allTodos.value.every(todo => todo.completed)
     allTodos.value.forEach(todo => {
@@ -112,6 +116,7 @@ export function useTodos() {
     toggleTodo,
     updateTodo,
     clearCompleted,
+    clearAll,
     toggleAllTodos,
     todoStats
   }

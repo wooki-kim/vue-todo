@@ -10,7 +10,7 @@
       />
       <label @dblclick="startEditing" class="todo-text">{{ todo.text }}</label>
       <span class="priority-badge" :class="`priority-${todo.priority}`">
-        {{ todo.priority === 'high' ? '●' : todo.priority === 'medium' ? '○' : '●' }}
+        {{ todo.priority === 'high' ? '●' : todo.priority === 'medium' ? '●' : '●' }}
       </span>
       <button class="destroy" @click="$emit('removeTodo', todo.id)">×</button>
     </div>
@@ -215,15 +215,15 @@ const cancelEditing = () => {
 }
 
 .priority-indicator.priority-high {
-  background: #ef4444;
+  background: #dc2626;
 }
 
 .priority-indicator.priority-medium {
-  background: #f59e0b;
+  background: #ea580c;
 }
 
 .priority-indicator.priority-low {
-  background: #10b981;
+  background: #16a34a;
 }
 
 .priority-badge {
@@ -233,27 +233,27 @@ const cancelEditing = () => {
 }
 
 .priority-badge.priority-high {
-  color: #ef4444;
+  color: #dc2626;
 }
 
 .priority-badge.priority-medium {
-  color: #6b7280;
+  color: #ea580c;
 }
 
 .priority-badge.priority-low {
-  color: #10b981;
+  color: #16a34a;
 }
 
 .todo-item.priority-high {
-  border-left: 4px solid #ef4444;
+  border-left: 4px solid #dc2626;
 }
 
 .todo-item.priority-medium {
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid #ea580c;
 }
 
 .todo-item.priority-low {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid #16a34a;
 }
 
 /* Tablet */
